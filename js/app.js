@@ -2365,12 +2365,28 @@
         const selectCheck = document.querySelectorAll('.admin-select-body')
         for (let i = 0; i < selectCheck.length; i++) {
             const select = selectCheck[i];
-            const selectHead = select.querySelector('.admin-select-head')
-            const selectDropdown = select.querySelector('.admin-select-dropdown')
-            _slideUp(selectDropdown, 0)
+            const selectHead = select.querySelector('.admin-select-head');
+            const selectDropdown = select.querySelector('.admin-select-dropdown');
+            const selectSelectedAccount = select.querySelector('.admin-select-selected-account');
+            const selectSelectedNumber = select.querySelector('.admin-select-selected-number');
+
+            const selectDropdownItems = select.querySelectorAll('.admin-select-item');
+            selectDropdownItems.forEach(item => {
+                const selectDropdownAccount = item.querySelector('.admin-select-account');
+                const selectDropdownNumber = item.querySelector('.admin-select-number');
+
+                item.addEventListener('click', function () {
+                    selectSelectedAccount.textContent = selectDropdownAccount.textContent;
+                    selectSelectedNumber.textContent = selectDropdownNumber.textContent;
+                    _slideUp(selectDropdown, 200);
+                });
+            });
+
+            _slideUp(selectDropdown, 0);
+
             selectHead.addEventListener('click', function () {
-                _slideToggle(selectDropdown, 200)
-            })
+                _slideToggle(selectDropdown, 200);
+            });
         }
 
 

@@ -287,6 +287,7 @@ body{
    visibility: hidden;
    transition: all 0.3s ease 0s;
    box-shadow: 0px 0px 0px 0px rgba(34, 27, 62, 0.10), 0px 6px 14px 0px rgba(34, 27, 62, 0.10), 0px 26px 26px 0px rgba(34, 27, 62, 0.09), 0px 57px 34px 0px rgba(34, 27, 62, 0.05), 0px 102px 41px 0px rgba(34, 27, 62, 0.01), 0px 160px 45px 0px rgba(34, 27, 62, 0.00);
+   z-index: 10;
 }
 .account-header-admin__label {
    color: #536460;
@@ -378,7 +379,6 @@ body{
       left: 0;
       width: 100%;
       z-index: 100;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
    }
    .header-admin__logo{
       display: block;
@@ -975,7 +975,7 @@ body{
    background: #FFF;
    width: 100%;
    transform: translateY(8px);
-   z-index: 2;
+   z-index: 5;
 }
 .select-conversion__item {
    padding: 12px 10px;
